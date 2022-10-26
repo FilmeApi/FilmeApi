@@ -12,9 +12,9 @@ namespace FilmesAPI.Controllers
         [HttpPost]
         public void AdicioanrFilme([FromBody] Filme filme)
         {
-
             filmes.Add(filme);
-            Console.WriteLine(filme.Titulo);
+
+
         }
 
     }
