@@ -15,13 +15,24 @@ namespace FilmesAPI.Controllers
         {
             filme.Id = id++;
             filmes.Add(filme);
-
-
         }
         [HttpGet]
-        public IEnumerable<Filme> RecuperarFilmes()
+        public IEnumerable<Filme> RecuperaFilmes()
         {
             return filmes;
+        }
+
+        [HttpGet("{id}")]
+        public Filme RecuperaFilmesPorId(int id)
+        {
+            return filmes.FirstOrDefault(filme => filme.Id == id);
+
+            //foreach (Filme filme in filmes)
+            //{
+            //    if (filme.Id == id)
+            //        return filme;
+            //}
+            //return null;
         }
 
     }
